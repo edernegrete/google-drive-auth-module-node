@@ -105,8 +105,7 @@ const uploadFiles = fileName => new Promise((resolve, reject) => {
   const file = `${fileName}.json`;
   const service = google.drive('v3');
   const fileMetadata = {
-    name: file,
-    parents: ['1dknwjUaqCjfcQJQuq5eTUn_InUb9xX-O'],
+    name: file
   };
   const media = {
     mimeType: 'application/json',
