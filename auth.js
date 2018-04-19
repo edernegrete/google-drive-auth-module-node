@@ -89,9 +89,9 @@ const readToken = oauth2Client => new Promise((resolve, reject) =>
  * @param {function} callback The callback to call with the authorized client.
  */
 function authorize(credentials) {
-  const clientSecret = web.credentials.client_secret;
-  const clientId = web.credentials.client_id;
-  const redirectUrl = web.credentials.redirect_uris[0];
+  const clientSecret = credentials.web.client_secret;
+  const clientId = credentials.web.client_id;
+  const redirectUrl = credentials.web.redirect_uris[0];
   const auth = new GoogleAuth();
   const oauth2Client = new auth.OAuth2(clientId, clientSecret, redirectUrl);
   return Promise.resolve(readToken(oauth2Client));
